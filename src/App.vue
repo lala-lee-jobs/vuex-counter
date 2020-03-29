@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>{{storeCount}}</h1>
-    <button @click="increment">Add</button>
+    <button @click="add(10)">Add</button>
   </div>
 </template>
 
@@ -23,9 +23,9 @@ export default {
     }
   },
   methods: {
-    increment() {
-      this.$store.commit('increment', 2);
-    }
+    ...mapMutations({
+      'add': 'increment'
+    })
   }
 }
 </script>
