@@ -9,8 +9,16 @@
 import { mapState, mapMutations } from 'vuex';
 
 export default {
+  data() {
+    return {
+      localCount: 0,
+    }
+  },
   computed: {
-    ...mapState(['count']),
+    ...mapState(['count', 'username', 'list']),
+    myCount() {
+      return this.localCount;
+    }
   },
   methods: {
     ...mapMutations(['increment']),
