@@ -4,20 +4,20 @@
     <button @click="addCount">Add</button>
   </div>
 </template>
+
 <script>
+import store from './store';
+
 export default {
   computed: {
     count() {
-      return this.$store.state.count;
+      return store.state.count;
     }
   },
   methods: {
     addCount() {
-      this.$store.commit('increment');
+      store.commit('increment');
     }
   },
 }
 </script>
-<style lang="scss">
-  
-</style>
