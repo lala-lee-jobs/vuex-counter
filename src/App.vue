@@ -1,23 +1,16 @@
 <template>
   <div>
     <h1>{{count}}</h1>
-    <button @click="addCount">Add</button>
+    <button @click="increment">Add</button>
   </div>
 </template>
 
 <script>
-import store from './store';
+import { mapState, mapMutations } from 'vuex';
 
 export default {
-  computed: {
-    count() {
-      return store.state.count;
-    }
-  },
-  methods: {
-    addCount() {
-      store.commit('increment');
-    }
-  },
+  // 映射 this.count 為 this.$store.state.count
+  computed: mapState(['count']),
+  methods: mapMutations(['increment']),
 }
 </script>
