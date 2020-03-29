@@ -9,8 +9,11 @@
 import { mapState, mapMutations } from 'vuex';
 
 export default {
-  // 映射 this.count 為 this.$store.state.count
-  computed: mapState(['count']),
-  methods: mapMutations(['increment']),
+  computed: {
+    ...mapState(['count']),
+  },
+  methods: {
+    ...mapMutations(['increment']),
+  }
 }
 </script>
